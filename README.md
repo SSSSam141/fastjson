@@ -1,10 +1,10 @@
-#Report SWE261P
+# Report SWE261P
 
-##Team Name：Endloop
+## Team Name：Endloop
 
-##Team Memebr：Bin Guo, Xin Tan, Chao Liu
+## Team Memebr：Bin Guo, Xin Tan, Chao Liu
 
-###FastJson
+### FastJson
 
 **Github: https://github.com/alibaba/fastjson**
 
@@ -20,7 +20,7 @@
 
   
 
-###Instructions for build up
+### Instructions for build up
 
 + The file structure shown as below
 
@@ -54,7 +54,7 @@
      ```
      
 
-###Testing for FastJson
+### Testing for FastJson
 
 - This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
 ![image-20220202171844452](/Users/sam/Library/Application Support/typora-user-images/image-20220202171844452.png)
