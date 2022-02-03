@@ -1,94 +1,94 @@
+#Report SWE261P
 
-# fastjson
+##Team Name：Endloop
 
-[![Java CI](https://github.com/alibaba/fastjson/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/alibaba/fastjson/actions/workflows/ci.yaml)
-[![Codecov](https://codecov.io/gh/alibaba/fastjson/branch/master/graph/badge.svg)](https://codecov.io/gh/alibaba/fastjson/branch/master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.alibaba/fastjson/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.alibaba/fastjson/)
-[![GitHub release](https://img.shields.io/github/release/alibaba/fastjson.svg)](https://github.com/alibaba/fastjson/releases)
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/alibaba/fastjson) 
-[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/fastjson2.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:fastjson2)
-=======
-[![QualityGate](https://quality-gate.com/backend/api/timeline?branchName=master&projectName=alibaba_fastjson)](https://quality-gate.com/dashboard/branches/7816#overview)
+##Team Memebr：Bin Guo, Xin Tan, Chao Liu
 
-Fastjson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Fastjson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.
+###FastJson
 
-### Fastjson Goals
- * Provide the best performance on the server-side and android client
- * Provide simple toJSONString() and parseObject() methods to convert Java objects to JSON and vice-versa
- * Allow pre-existing unmodifiable objects to be converted to and from JSON
- * Extensive support of Java Generics
- * Allow custom representations for objects
- * Support arbitrarily complex objects (with deep inheritance hierarchies and extensive use of generic types)
+**Github: https://github.com/alibaba/fastjson**
 
-![fastjson](logo.jpg "fastjson")
++ Fastjson, a library taht can be used to convert Java Objects into their JSON representation, is able to convert Json string to an equivalent Java object. 
 
-## Documentation
++ Fastjson contain 14 packages ro provide the best performance on the server-side and android client and simeple toJSONString() and parseObject() methods to convert Java objects to JSON and vice versa. Also, it allows pre-existing unmodifiable objects to be converted to and form JSON and custom presentations for objects. 
 
-- [Documentation Home](https://github.com/alibaba/fastjson/wiki)
-- [Contributing Code](https://github.com/nschaffner/fastjson/blob/master/CONTRIBUTING.md)
-- [Frequently Asked Questions](https://github.com/alibaba/fastjson/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+  ![image-20220202153119167](/Users/sam/Library/Application Support/typora-user-images/image-20220202153119167.png)
 
-## Benchmark
++ LOC and Language:
 
-https://github.com/eishay/jvm-serializers/wiki
+  ![image-20220202153147398](/Users/sam/Library/Application Support/typora-user-images/image-20220202153147398.png)
 
-## Download
+  
 
-- [maven][1]
-- [the latest JAR][2]
+###Instructions for build up
 
-[1]: https://repo1.maven.org/maven2/com/alibaba/fastjson/
-[2]: https://search.maven.org/remote_content?g=com.alibaba&a=fastjson&v=LATEST
++ The file structure shown as below
 
-## Maven
+  ![image-20220202153303027](/Users/sam/Library/Application Support/typora-user-images/image-20220202153303027.png)
 
-```xml
-<dependency>
-    <groupId>com.alibaba</groupId>
-    <artifactId>fastjson</artifactId>
-    <version>1.2.76</version>
-</dependency>
-```
+  ![image-20220202153317424](/Users/sam/Library/Application Support/typora-user-images/image-20220202153317424.png)
 
-```xml
-<dependency>
-    <groupId>com.alibaba</groupId>
-    <artifactId>fastjson</artifactId>
-    <version>1.1.72.android</version>
-</dependency>
-```
+![image-20220202153331118](/Users/sam/Library/Application Support/typora-user-images/image-20220202153331118.png)
 
-## Gradle via JCenter
++ How to build?
 
-``` groovy
-compile 'com.alibaba:fastjson:1.2.76'
-```
+  1. Make a new directory
+  2. git clone https://github.com/alibaba/fastjson
+  3. Choose a IDE and then import the project to the IDE as a maven project. Then find pom.xml to reload the project
 
-``` groovy
-compile 'com.alibaba:fastjson:1.1.72.android'
-```
++ How to run?
 
-Please see this [Wiki Download Page][Wiki] for more repository info.
+  1. In pom.xml, add two dependencies (android or others)
 
-[Wiki]: https://github.com/alibaba/fastjson/wiki#download
+     ```java
+     <dependency>
+         <groupId>com.alibaba</groupId>
+         <artifactId>fastjson</artifactId>
+         <version>1.2.76</version>
+     </dependency>
+       <dependency>
+         <groupId>com.alibaba</groupId>
+         <artifactId>fastjson</artifactId>
+         <version>1.1.72.android</version>
+     </dependency>
+     ```
+     
 
-### *License*
+###Testing for FastJson
 
-Fastjson is released under the [Apache 2.0 license](license.txt).
+- This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
+![image-20220202171844452](/Users/sam/Library/Application Support/typora-user-images/image-20220202171844452.png)
+- We can run the test case individually under IDE, or we can run the test cases using maven under the terminal
+   ```mvn test```   run all the test case
+  ```mvn -Dtest=TestCaseName```  run single test case
 
-```
-Copyright 1999-2020 Alibaba Group Holding Ltd.
+- We can also build the project using maven
+    ```mvn package```    
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at the following link.
+### Systematic functional testing & Partition testing:
 
-     http://www.apache.org/licenses/LICENSE-2.0
++ Systematic functional testing:
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+  + Select inputs that are especially valuable.
+
+  + Usually by choosing representatives of classes that are apt to fail often or not at all. It usually isolate regions with likely failures.
+
+  + functional testing usually implies systematic testing.
+
+Using systematic functional testing can make use of the attributes of classes we have. For example, if our purpose is to estimate the proportion of needles to hay, we can use their weight attribute for filtering. If we just test and sample randomly, it will be huge work.
+
++ Partition testing
+
+  + Partition
+    + It is one of the basic principles of general engineering principles.
+    + Divide and conquer: divied complex activities into sets of simple activities that can be tackled independently. For example: we can partition testing process into: unit, integration, system, .. testing; we can partition analysis into modeling and analyzing the model.
+    + Partition specification space for testing; Partition the program structure for testing.
+
+  + Systematic partition testing
+    + Sometimes failures are sparse in the space of possibile inputs but dense in some parts of the space. Use systematic partition testing can find the failures with more chances.
+
+  + Boundaries
+    + We use data type or classes to be the boundary. Since the Fastjson have the function to convert different types of object (numbers, strings, ) to JSON, we can simply partition our tests by the types of the input.
++ Junit tests: the Junit tests are in the directory: ```fastjson/src/test/java/SWE261P/SWE261P_A1_Test.java```
+  + ```test_String()```  is used for testing String type for the function ```JSON.toJSONString()```
+  + ```test_Array()```  is used for testing int[] array type for the function ```JSON.toJSONString()```
