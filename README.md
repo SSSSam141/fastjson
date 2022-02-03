@@ -12,9 +12,10 @@
 
 + Fastjson contain 14 packages ro provide the best performance on the server-side and android client and simeple toJSONString() and parseObject() methods to convert Java objects to JSON and vice versa. Also, it allows pre-existing unmodifiable objects to be converted to and form JSON and custom presentations for objects. 
 
-  
+  ！[img0](imgs/img0.png)
 
 + LOC and Language:
+ ！[img1](imgs/img1.png)
 
   
   
@@ -22,6 +23,9 @@
 ### Instructions for build up
 
 + The file structure shown as below
+  ！[img2](imgs/img2.png)
+  ！[img3](imgs/img5.png)
+  ！[img4](imgs/img4.png)
 
 
 
@@ -51,6 +55,9 @@
 
 ### Testing for FastJson
 
+- This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
+ ！[img5](imgs/img3.png)
+ 
 - This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
 
 - We can run the test case individually under IDE, or we can run the test cases using maven under the terminal
