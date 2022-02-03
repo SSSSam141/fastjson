@@ -12,23 +12,18 @@
 
 + Fastjson contain 14 packages ro provide the best performance on the server-side and android client and simeple toJSONString() and parseObject() methods to convert Java objects to JSON and vice versa. Also, it allows pre-existing unmodifiable objects to be converted to and form JSON and custom presentations for objects. 
 
-  ![image-20220202153119167](/Users/sam/Library/Application Support/typora-user-images/image-20220202153119167.png)
+  
 
 + LOC and Language:
 
-  ![image-20220202153147398](/Users/sam/Library/Application Support/typora-user-images/image-20220202153147398.png)
-
+  
   
 
 ###Instructions for build up
 
 + The file structure shown as below
 
-  ![image-20220202153303027](/Users/sam/Library/Application Support/typora-user-images/image-20220202153303027.png)
 
-  ![image-20220202153317424](/Users/sam/Library/Application Support/typora-user-images/image-20220202153317424.png)
-
-![image-20220202153331118](/Users/sam/Library/Application Support/typora-user-images/image-20220202153331118.png)
 
 + How to build?
 
@@ -57,7 +52,7 @@
 ###Testing for FastJson
 
 - This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
-![image-20220202171844452](/Users/sam/Library/Application Support/typora-user-images/image-20220202171844452.png)
+
 - We can run the test case individually under IDE, or we can run the test cases using maven under the terminal
    ```mvn test```   run all the test case
   ```mvn -Dtest=TestCaseName```  run single test case
