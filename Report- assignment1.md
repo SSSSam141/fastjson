@@ -10,7 +10,7 @@
 
 + Fastjson, a library taht can be used to convert Java Objects into their JSON representation, is able to convert Json string to an equivalent Java object. 
 
-+ Fastjson contain 14 packages ro provide the best performance on the server-side and android client and simeple toJSONString() and parseObject() methods to convert Java objects to JSONand vice versa. Also, it allows pre-existing unmodifiable objects to be converted to and form JSON and custom presentations for objects. 
++ Fastjson contain 14 packages ro provide the best performance on the server-side and android client and simeple toJSONString() and parseObject() methods to convert Java objects to JSON and vice versa. Also, it allows pre-existing unmodifiable objects to be converted to and form JSON and custom presentations for objects. 
 
   ![image-20220202153119167](/Users/sam/Library/Application Support/typora-user-images/image-20220202153119167.png)
 
@@ -53,11 +53,17 @@
      </dependency>
      ```
      
-     
 
+###Testing for FastJson
 
+- This project is using JUnnit to do unit test, and using maven to manage the dependency and build. So all the test are written under the "test" folder, all the part that need to be tested has a corresponding test file.
+![image-20220202171844452](/Users/sam/Library/Application Support/typora-user-images/image-20220202171844452.png)
+- We can run the test case individually under IDE, or we can run the test cases using maven under the terminal
+   ```mvn test```   run all the test case
+  ```mvn -Dtest=TestCaseName```  run single test case
 
-
+- We can also build the project using maven
+    ```mvn package```    
 
 ### Systematic functional testing & Partition testing:
 
@@ -82,7 +88,7 @@ Using systematic functional testing can make use of the attributes of classes we
     + Sometimes failures are sparse in the space of possibile inputs but dense in some parts of the space. Use systematic partition testing can find the failures with more chances.
 
   + Boundaries
-    + We use data type or classes to be the boundary. Since the Fastjson have the function to convert different types of object to JSON, we can simply partition our test by the types of the input.
-
-+ Junit tests:
-  + 
+    + We use data type or classes to be the boundary. Since the Fastjson have the function to convert different types of object (numbers, strings, ) to JSON, we can simply partition our tests by the types of the input.
++ Junit tests: the Junit tests are in the directory: ```fastjson/src/test/java/SWE261P/SWE261P_A1_Test.java```
+  + ```test_String()```  is used for testing String type for the function ```JSON.toJSONString()```
+  + ```test_Array()```  is used for testing int[] array type for the function ```JSON.toJSONString()```
