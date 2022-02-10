@@ -27,6 +27,6 @@ public class JSONTest3 extends TestCase {
     }
     
     public static class Model {
-        private Map<String, Object> attributes = new HashMap<String, Object>();
+        public Map<String, Object> attributes = new HashMap<String, Object>();
     }
 }
