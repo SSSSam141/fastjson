@@ -87,8 +87,8 @@
                 <version>3.8.0</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>6</source>
-                    <target>6</target>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -571,8 +571,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
-            <scope>test</scope>
+            <version>1.18.22</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
