@@ -14,17 +14,17 @@ public class JacksonInnerClassTest extends TestCase {
 
         mapper.readValue("{a:3}", Map.class);
     }
-    
-    public void test_1() throws Exception {
-        Model model = new Model();
-        model.id = 1001;
-        ObjectMapper mapper = new ObjectMapper();
-        String text = mapper.writeValueAsString(model);
-
-
-        mapper.readValue(text, Model.class);
-    }
-    
+//
+//    public void test_1() throws Exception {
+//        Model model = new Model();
+//        model.id = 1001;
+//        ObjectMapper mapper = new ObjectMapper();
+//        String text = mapper.writeValueAsString(model);
+//
+//
+//        mapper.readValue(text, Model.class);
+//    }
+//
     public class Model {
         public Model() {
 

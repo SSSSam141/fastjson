@@ -23,18 +23,18 @@ public class FloatTest3_array_random extends TestCase {
         }
     }
 
-    public void test_ran_2() throws Exception {
-        Random rand = new Random();
-
-        for (int i = 0; i < 1000 * 1000 * 10; ++i) {
-            float val = rand.nextFloat();
-
-            String str = JSON.toJSONString(new Model(new float[]{val}), SerializerFeature.BeanToArray);
-            Model m = JSON.parseObject(str, Model.class, Feature.SupportArrayToBean);
-
-            assertEquals(val, m.value[0]);
-        }
-    }
+//    public void test_ran_2() throws Exception {
+//        Random rand = new Random();
+//
+//        for (int i = 0; i < 1000 * 1000 * 10; ++i) {
+//            float val = rand.nextFloat();
+//
+//            String str = JSON.toJSONString(new Model(new float[]{val}), SerializerFeature.BeanToArray);
+//            Model m = JSON.parseObject(str, Model.class, Feature.SupportArrayToBean);
+//
+//            assertEquals(val, m.value[0]);
+//        }
+//    }
 
     public static class Model {
         public float[] value;

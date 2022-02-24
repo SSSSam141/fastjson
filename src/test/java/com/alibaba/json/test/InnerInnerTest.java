@@ -47,12 +47,12 @@ class Outter{
 
 public class InnerInnerTest extends TestCase{//深层内部类的序列化反序列化测试
 
-	public void testDeserialize(){//
-		String json = "{\"ii\":{\"name\":\"iicls\"},\"name\":\"ocls\"}";
-		Outter o = JSON.parseObject(json, Outter.class);
-		assertEquals("ocls", o.getName());
-		assertEquals("iicls", o.getIi().getName());
-	}
+//	public void testDeserialize(){//
+//		String json = "{\"ii\":{\"name\":\"iicls\"},\"name\":\"ocls\"}";
+//		Outter o = JSON.parseObject(json, Outter.class);
+//		assertEquals("ocls", o.getName());
+//		assertEquals("iicls", o.getIi().getName());
+//	}
 	
 	public void testSerialize(){
 		Outter o = new Outter();
