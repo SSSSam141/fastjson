@@ -3,18 +3,27 @@ package SWE261P;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.MockitoAnnotations;
+import static org.assertj.core.api.Assertions.*;
+
 import static org.mockito.Mockito.*;
 
 public class Part5_Mockito {
 
-    public interface GetJson {
-        String get(String url);
+    private GetJson getJson;
+    private String result;
+    @Before
+    public void setup() {
+        getJson = mock(GetJson.class);
+        result = new String("");
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void test() {
-        GetJson getJson = mock(GetJson.class);
+    public void mockitotest() {
+
         when(getJson.get("https://baidu.com/")).thenReturn("{\"menu\": {\n" +
                 "  \"id\": \"file\",\n" +
                 "  \"value\": \"File\",\n" +
@@ -26,10 +35,8 @@ public class Part5_Mockito {
                 "    ]\n" +
                 "  }\n" +
                 "}}");
-
-        String result = getJson.get("https://baidu.com/");
-        Object jo = JSON.toJSON(result);
-        Object jo1 = JSON.toJSON("{\"menu\": {\n" +
+        result = getJson.get("https://baidu.com/");
+        assertThat(JSON.toJSON("{\"menu\": {\n" +
                 "  \"id\": \"file\",\n" +
                 "  \"value\": \"File\",\n" +
                 "  \"popup\": {\n" +
@@ -39,8 +46,7 @@ public class Part5_Mockito {
                 "      {\"value\": \"Close\", \"onclick\": \"CloseDoc()\"}\n" +
                 "    ]\n" +
                 "  }\n" +
-                "}}");
-        Assert.assertEquals(jo, jo1);
+                "}}")).isEqualTo(JSON.toJSON(result));
     }
 
 }
