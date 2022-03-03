@@ -125,7 +125,7 @@ public class SerializeWriterTest {
         SerializerFeature SingleQuote = SerializerFeature.UseSingleQuotes;
 
         SerializeWriter serializeWriter = new SerializeWriter(SingleQuote);
-        String value = "'{key:1,value:1}'";
+        String value = "'{key:'1',value:1}'";
         serializeWriter.writeStringWithSingleQuote(value);
 
     }
@@ -139,4 +139,13 @@ public class SerializeWriterTest {
         byte[] bytes = value.getBytes();
         serializeWriter.writeByteArray(bytes);
     }
+
+    @Test
+    public void writeKeyWithSingleQuoteIfHasSpecialTest() {
+        SerializerFeature singleQuote = SerializerFeature.UseSingleQuotes;
+        SerializeWriter serializeWriter = new SerializeWriter(singleQuote);
+        String text = "{key:'1',value:1}";
+        serializeWriter.writeKeyWithSingleQuoteIfHasSpecial(text);
+    }
+
 }

@@ -2276,6 +2276,7 @@ public final class SerializeWriter extends Writer {
         }
 
         buf[count - 1] = '\'';
+        System.out.println(buf);
     }
 
     protected void writeStringWithSingleQuote(char[] chars) {
@@ -2501,6 +2502,7 @@ public final class SerializeWriter extends Writer {
         }
 
         buf[newcount - 1] = ':';
+       System.out.println(buf);
     }
 
     public void flush() {
