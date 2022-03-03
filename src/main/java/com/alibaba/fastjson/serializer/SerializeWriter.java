@@ -2402,7 +2402,7 @@ public final class SerializeWriter extends Writer {
         }
     }
 
-    private void writeKeyWithSingleQuoteIfHasSpecial(String text) {
+    public void writeKeyWithSingleQuoteIfHasSpecial(String text) {
         final byte[] specicalFlags_singleQuotes = IOUtils.specicalFlags_singleQuotes;
 
         int len = text.length();
